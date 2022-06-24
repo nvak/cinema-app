@@ -2,10 +2,8 @@ package cinema.model;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,12 +21,12 @@ public class Order {
     private Long id;
     @OneToMany
     @JoinTable(name = "orders_tickets",
-            joinColumns = @JoinColumn (name = "order_id"),
+            joinColumns = @JoinColumn(name = "order_id"),
             inverseJoinColumns = @JoinColumn(name = "ticket_id"))
     private List<Ticket> tickets;
     @Column(name = "order_time")
     private LocalDateTime orderTime;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
@@ -65,32 +63,11 @@ public class Order {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        Order order = (Order) o;
-        return Objects.equals(id, order.id)
-                && Objects.equals(tickets, order.tickets)
-                && Objects.equals(orderTime, order.orderTime)
-                && Objects.equals(user, order.user);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, tickets, orderTime, user);
-    }
-
-    @Override
     public String toString() {
         return "Order{"
                 + "id=" + id
                 + ", tickets=" + tickets
                 + ", orderTime=" + orderTime
-                + ", user=" + user
-                + '}';
+                + ", user=" + user + '}';
     }
 }
