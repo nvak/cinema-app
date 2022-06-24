@@ -48,4 +48,4 @@ db.password=YOUR PASSWORD
 ```
 4. Configure Tomcat.
 5. Run project.
-6. For login use admin(admin@i.ua | admin123)
+6. For login use admin(admin@i.ua:admin123)
