@@ -37,7 +37,7 @@ Simple WEB application that supports registration, authentication and CRUD opera
 ## How to run project
 1. Clone the project on your IDE
 2. Install MySQL and Apache Tomcat
-3. Edit database config (URL, username, password) in ```db.properties``` in ```resources``` folder:
+3. Edit database config (driver, URL, username, password) in ```db.properties``` in ```resources``` folder:
 
 ``` java
 #MySQL properties
