@@ -1,6 +1,6 @@
 
 # Welcome to Cinema Web App!
-![enter image description here](https://i.imgur.com/bBLr71w.jpg)
+![cats in movie](https://i.imgur.com/9a0ajYF.jpg)
 
 Simple WEB application that supports registration, authentication and CRUD operations.
 
